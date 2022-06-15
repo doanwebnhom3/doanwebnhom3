@@ -1,0 +1,25 @@
+﻿@using DoAn_CoSo.Models
+@model Sanpham
+
+
+@{ ViewBag.Title = "xemchitiet";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<br />
+
+<CENTER>
+    <div>
+        <h2>CHI TIẾT SẢN PHẨM</h2>
+        <img src="@Url.Content("~/HinhanhSP/" +@Model.Hinhanh)" width="400" height="400"/>
+        <br />
+        <h3>Tên sách: @Model.Tensach</h3>
+        <h3>Thể loại: @Model.Theloai</h3>
+        <h3>Tác giả @Model.Tacgia</h3>
+        <h3>Số lượng @Model.Soluong</h3>
+        <h3 style="color:red">Giá: @Model.Giatien</h3>
+        <br />Mô tả: @Model.Mota<br />
+        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMasach = Model.Masach, @strURL = Request.Url.ToString() }))
+        {
+        <input type="submit" value="Mua hàng" id="bgnGioHang" />}
+
+    </div>
+</CENTER>

@@ -1,0 +1,75 @@
+﻿
+@{ ViewBag.Title = "Home page";
+}
+
+
+
+<div class="row">
+    <div class="col-md-8">
+        <img class="img-responsive" src="~/HinhanhSP/banner1.png" width="700" height="1300" />
+    </div>
+    <div class="col-md-4">
+        <img src="~/HinhanhSP/qc2.gif" class="img-responsive" width="600" />
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div>
+    <img class="img-responsive" src="~/HinhanhSP/bann3.jpg" />
+</div>
+<br />
+<div class="sachnoibat">
+    <div class="row">
+
+        <h3> SÁCH NỔI BẬT</h3>
+
+        <div class="col-md-4">
+            <img src="~/HinhanhSP/snb1.jpg" class="img-responsive" alt="" />
+        </div>
+        <div class="col-md-4">
+            <img src="~/HinhanhSP/snb2.jpg" class="img-responsive" alt="" />
+        </div>
+        <div class="col-md-4">
+            <img src="~/HinhanhSP/snb3.jpg" class="img-responsive" alt="" />
+        </div>
+    </div>
+</div>
+
+
+@* danh muc *@
+<div class="danhmuc">
+    @Html.Action("Index", "Danhmuc")
+</div>
+
+<div class="danhmuc">
+    @Html.Action("Nhaxuatban", "Danhmuc")
+</div>
+
+<div class="danhmuc">
+    @Html.Action("Loaisach", "Danhmuc")
+</div>
+
+
+
+
+
+tim kiem nhieu nhat  
+<div style="background-color:#f3f3f3;" class="py-2">
+    <div class="container-91">
+        @*<a href=""><img src="~/HinhanhSp/cart.png" alt="" width="100%"></a>*@
+    </div>
+</div>
+<div style="background-color:#f3f3f3;" class="py-2">
+    <div class="container-91 bg-white py-2 px-3">
+        Tìm kiếm nhiều:
+        <a class="pl-3" href="">Truyện tranh</a>
+        <a class="pl-3" href="">Thuật giả kim</a>
+        <a class="pl-3" href="">Văn học Việt Nam</a>
+        <a class="pl-3" href="">Dạy con làm giàu</a>
+        <a class="pl-3" href="">Khoa học- Công nghệ</a>
+        <a class="pl-3" href="">Phong cách giao tiếp</a>
+    </div>
+</div>
+<div>
+    <img class="img-responsive" src="~/HinhanhSP/bann2.jpg" />
+</div>

@@ -1,0 +1,35 @@
+﻿@model DoAn_CoSo.Models.Loaisach
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Loaisach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenloai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenloai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Linhvuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Linhvuc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Maloai }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

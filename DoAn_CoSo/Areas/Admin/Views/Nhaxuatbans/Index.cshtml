@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DoAn_CoSo.Models.Nhaxuatban>
+
+@{ ViewBag.Title = "Index";
+   Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h2>Quản lý hãng điện thoại</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới nhà xuất bản ", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Mã nhà xuất bản
+        </th>
+        <th>
+            Tên nhà xuất bản
+        </th>
+        <th>
+            Địa chỉ 
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Manxb)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tennxb)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Diachi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sdt)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.ActionLink("Sửa", "Edit", new { id = item.Manxb }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.Manxb }) |
+        @Html.ActionLink("Xoá", "Delete", new { id = item.Manxb })
+    </td>
+</tr>}
+
+</table>
+

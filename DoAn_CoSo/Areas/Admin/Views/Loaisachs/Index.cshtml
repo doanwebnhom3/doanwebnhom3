@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DoAn_CoSo.Models.Loaisach>
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h2>Quản lý hệ điều hành</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới hệ điều hành", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã loại
+        </th>
+        <th>
+            Tên loại
+        </th>
+        <th>
+            Lĩnh vực
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Maloai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tenloai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Linhvuc)
+    </td>
+    <td>
+        @Html.ActionLink("Sửa", "Edit", new { id = item.Maloai }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.Maloai }) |
+        @Html.ActionLink("Thêm mới ", "Delete", new { id = item.Maloai })
+    </td>
+</tr>}
+
+</table>

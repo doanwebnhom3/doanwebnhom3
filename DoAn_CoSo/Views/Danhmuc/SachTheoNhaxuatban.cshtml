@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DoAn_CoSo.Models.Sanpham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div> <p style="font: 18px bold red">  SÁCH THEO NHÀ XUẤT BẢN         </p>  </div>
+@foreach (var sach in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <a href="@Url.Action("xemchitiet", new {@Masach=sach.Masach })">
+                <img src=@Url.Content("~/HinhanhSP/"+sach.Hinhanh) class="img-responsive" alt="" width="400" height="400" />
+            </a>
+            <center>
+                <h3>@sach.Tensach</h3>
+                <h3 style="color:red">Giá: @sach.Giatien</h3>
+                <br />
+                @using (Html.BeginForm("ThemGioHang", "Giohang", new { @iMasach = sach.Masach, @strURL = Request.Url.ToString() }))
+                {
+                    <input type="submit" value="Mua hàng" id="bgnGioHang" />
+                }
+                
+            </center>
+            <div class="ratings">
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DoAn_CoSo.Models.Nhaxuatban>
+<div class="title">SẢN PHẨM THEO NHÀ XUẤT BẢN </div>
+<div class="tab-tab-tab">
+    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("SachTheoNhaxuatban", "Danhmuc", new { id = item.Manxb})" class="list-group-item">
+                @item.Tennxb
+            </a>
+        }
+    </ul>
+</div>
+
+

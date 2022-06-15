@@ -1,0 +1,15 @@
+﻿@using DoAn_CoSo.Models;
+@model List<Sanpham>
+<div class="row">
+    <div class=" bg-danger"><h3 style="padding-left:20px"> Sách Bán Chạy </h3></div>
+    @foreach (var item in Model)
+    {
+            <div class="col-md-3 col-sm-6">
+                <a href="@Url.Action("xemchitiet", new {@Masach = item.Masach })">
+                    <img src=@Url.Content("~/HinhanhSP/" + item.Hinhanh) class="img-responsive" alt="" width="400" height="400" />
+                </a>
+                    
+
+            </div>}
+
+</div>

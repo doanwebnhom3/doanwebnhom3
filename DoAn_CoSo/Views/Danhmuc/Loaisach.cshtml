@@ -1,0 +1,12 @@
+﻿@model IEnumerable<DoAn_CoSo.Models.Loaisach>
+<p class="lead"> LOẠI SÁCH </p>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SachtheoLoai", "Danhmuc", new { id = item.Maloai})" class="list-group-item">
+            @item.Tenloai
+        </a>
+    }
+</div>
+
+

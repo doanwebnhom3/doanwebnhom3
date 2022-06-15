@@ -1,0 +1,24 @@
+﻿
+<div class="row">
+    <div class=" bg-danger"><h3 style="padding-left:20px"> Sách mới </h3></div>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 col-sm-6">
+            <a href="@Url.Action("xemchitiet", new {@Masach=item.Masach })">
+                <img src=@Url.Content("~/HinhanhSP/"+item.Hinhanh) class="img-responsive" alt="" width="400" height="400" />
+            </a>
+                <center>
+                    <h3>@item.Tensach</h3>
+                    <h3 style="color:red">Giá: @item.Giatien</h3>
+                    <br />
+                    @using (Html.BeginForm("ThemGioHang", "Giohang", new { @iMasach = item.Masach, @strURL = Request.Url.ToString() }))
+                    {
+                         <input type="submit" value="Mua hàng" id="bgnGioHang" />}
+                    @*<a href="@Url.Action("xemchitiet", new {@Masp=item.Masp })">Xem chi tiết</a>*@
+                </center>
+
+</div>}
+    
+</div>
+
+
